@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Register - Auth Demo</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h1>Register</h1>
+      <form id="registerForm">
+        <label>Name<input type="text" name="name" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <label>Age<input type="number" name="age" min="0" /></label>
+        <label>DOB<input type="date" name="dob" /></label>
+        <label>Phone<input type="tel" name="phone" /></label>
+        <button type="submit">Register</button>
+      </form>
+      <p class="muted">Already have an account? <a href="/login.html">Login</a></p>
+      <div id="error" class="error"></div>
+    </section>
+  </main>
+<script src="/js/register.js"></script>
+</body>
+</html>

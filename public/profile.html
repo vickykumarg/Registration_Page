@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Profile - Auth Demo</title>
+<link rel="stylesheet" href="/css/style.css" />
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  #profileName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .btn-group {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* Modal styling */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto; 
+    padding: 1rem;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 400px;
+  }
+  .modal-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .modal-content input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.4rem;
+  }
+  .modal-content button {
+    padding: 0.5rem 1rem;
+  }
+</style>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <div id="profileName"></div>
+      <table id="profileTable">
+        <tr><th>Email</th><td id="email"></td></tr>
+        <tr><th>Age</th><td id="age"></td></tr>
+        <tr><th>DOB</th><td id="dob"></td></tr>
+        <tr><th>Phone</th><td id="phone"></td></tr>
+      </table>
+      <div class="btn-group">
+        <button id="updateBtn">Update</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+      <div id="error" class="error"></div>
+    </section>
+  </main>
+
+  <!-- Update Modal -->
+  <div id="updateModal" class="modal">
+    <div class="modal-content">
+      <h2>Update Profile</h2>
+      <form id="updateForm">
+        <label>Name<input type="text" name="name" required /></label>
+        <label>Age<input type="number" name="age" min="0" /></label>
+        <label>DOB<input type="date" name="dob" /></label>
+        <label>Phone<input type="tel" name="phone" /></label>
+        <button type="submit">Save</button>
+        <button type="button" id="cancelBtn">Cancel</button>
+      </form>
+      <div id="updateError" class="error"></div>
+    </div>
+  </div>
+
+<script src="/js/profile.js"></script>
+</body>
+</html>
+
